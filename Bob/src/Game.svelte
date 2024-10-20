@@ -2,9 +2,10 @@
     import { onMount } from "svelte"
     import { createEventDispatcher } from 'svelte'
 
+    export let level = 1
+
     const dispatch = createEventDispatcher()
     const gameSeconds = 60
-    const bobTime = 700
     const bobSpeed = 3
     const bobWidth = 49
     const bobHeight = 79
@@ -26,8 +27,21 @@
     let gameTimerStop
     let drawTimerStop
     let bobTimerStop
+    let bobTime
 
     onMount(async () => {
+        switch (level) {
+            case 1:
+                bobTime = 1200
+                break
+            case 2:
+                bobTime = 900
+                break
+            case 3:
+                bobTime = 600
+                break
+
+        }
         canvas = document.getElementById("canvas")
         ctx = canvas.getContext('2d')
         ctx.font = "bold 30px courier";

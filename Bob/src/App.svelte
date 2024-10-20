@@ -3,6 +3,7 @@
 
   let gameState = "first"
   let score
+  let level = 2
 
   function gameOver(e) {
     score = e.detail.score
@@ -16,16 +17,26 @@
         <br><br>
         <p>Du skal skyde Bob så mange gange som muligt i løbet af et minut!</p>
         <br><br><br><br>
-        <button on:click={e => {gameState = "game"}}>Start Game</button>
+        <button on:click={e => {gameState = "selectDifficulty"}}>Start Game</button>
+      </div>
+    {:else if gameState === "selectDifficulty"}  
+      <div class="inner">
+        <p>Choose difficulty:</p>
+        <br><br>
+        <button on:click={e => {level = 1; gameState="game"}}>Beginner</button>
+        <br><br><br>
+        <button on:click={e => {level = 2; gameState="game"}}>intermediate</button>
+        <br><br><br>
+        <button on:click={e => {level = 3; gameState="game"}}>Expoert</button>
       </div>
     {:else if gameState === "game"}
-      <Game on:gameOver={gameOver} />
+      <Game on:gameOver={gameOver} {level} />
     {:else if gameState === "gameOver"}
       <div class="inner">
         <br><br>
         <p>Game Over, you got {score} points! </p>
         <br><br><br><br>
-        <button on:click={e => {gameState = "game"}}>Play again</button>
+        <button on:click={e => {gameState = "selectDifficulty"}}>Play again</button>
       </div>
     {/if}
 </div>
