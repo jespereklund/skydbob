@@ -17,7 +17,7 @@
         <br><br>
         <p>Du skal skyde Bob så mange gange som muligt i løbet af et minut!</p>
         <br><br><br><br>
-        <button on:click={e => {gameState = "selectDifficulty"}}>Start Game</button>
+        <button on:click={e => {gameState = "selectDifficulty"}}>Start spil</button>
       </div>
     {:else if gameState === "selectDifficulty"}  
       <div class="inner">
@@ -34,9 +34,9 @@
     {:else if gameState === "gameOver"}
       <div class="inner">
         <br><br>
-        <p>Game Over, you got {score} points! </p>
+        <p>Game Over. Du fik {score} point! </p>
         <br><br><br><br>
-        <button on:click={e => {gameState = "selectDifficulty"}}>Play again</button>
+        <button on:click={e => {gameState = "selectDifficulty"}}>Spil igen</button>
       </div>
     {/if}
 </div>

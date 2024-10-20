@@ -114,7 +114,7 @@
         bobW += (bobWSeek - bobW) / bobSpeed
         bobH += (bobHSeek - bobH) / bobSpeed
         ctx.fillText("Score: " + score, 30, 597)
-        ctx.fillText("Time left:" + (((gameSeconds - time) < 10) ? "  " : " ") + (gameSeconds - time) + " Sec", 370, 597)
+        ctx.fillText("Tid tilbage:" + (((gameSeconds - time) < 10) ? "  " : " ") + (gameSeconds - time) + " Sec", 330, 597)
     }
     
 </script>
