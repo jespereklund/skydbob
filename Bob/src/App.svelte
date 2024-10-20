@@ -21,13 +21,13 @@
       </div>
     {:else if gameState === "selectDifficulty"}  
       <div class="inner">
-        <p>Choose difficulty:</p>
+        <p>Vælg sværhedsgrad:</p>
         <br><br>
-        <button on:click={e => {level = 1; gameState="game"}}>Beginner</button>
+        <button on:click={e => {level = 1; gameState="game"}}>Begynder</button>
         <br><br><br>
-        <button on:click={e => {level = 2; gameState="game"}}>intermediate</button>
+        <button on:click={e => {level = 2; gameState="game"}}>Øvet</button>
         <br><br><br>
-        <button on:click={e => {level = 3; gameState="game"}}>Expoert</button>
+        <button on:click={e => {level = 3; gameState="game"}}>Expert</button>
       </div>
     {:else if gameState === "game"}
       <Game on:gameOver={gameOver} {level} />
